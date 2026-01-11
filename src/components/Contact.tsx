@@ -23,7 +23,7 @@ Phone: ${formData.phone}
 
 Message: ${formData.message}`;
     
-    window.open(`https://wa.me/966571269056?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
+    window.open(`https://api.whatsapp.com/send?phone=966571269056&text=${encodeURIComponent(whatsappMessage)}`, '_blank');
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -38,7 +38,7 @@ Message: ${formData.message}`;
       icon: Phone,
       label: 'WhatsApp',
       value: '+966 571 269 056',
-      href: 'https://wa.me/966571269056',
+      href: 'https://api.whatsapp.com/send?phone=966571269056',
     },
     {
       icon: Instagram,
@@ -127,7 +127,7 @@ Message: ${formData.message}`;
                   </p>
                   <Button variant="outline" className="bg-white text-gold hover:bg-white/90 border-0" asChild>
                     <a
-                      href="https://wa.me/966571269056"
+                      href="https://api.whatsapp.com/send?phone=966571269056"
                       target="_blank"
                       rel="noopener noreferrer"
                     >

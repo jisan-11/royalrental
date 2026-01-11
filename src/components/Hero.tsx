@@ -57,7 +57,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button variant="hero" size="xl" asChild>
               <a
-                href="https://wa.me/966571269056"
+                href="https://api.whatsapp.com/send?phone=966571269056"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="gap-3"

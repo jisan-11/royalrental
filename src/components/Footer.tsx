@@ -79,7 +79,7 @@ const Footer = () => {
             <h4 className="font-display text-lg font-semibold mb-6">Contact Us</h4>
             <div className="space-y-4">
               <a
-                href="https://wa.me/966571269056"
+                href="https://api.whatsapp.com/send?phone=966571269056"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-white/70 hover:text-gold transition-colors text-sm"
@@ -105,7 +105,7 @@ const Footer = () => {
             {/* Social Links */}
             <div className="flex items-center gap-4 mt-6">
               <a
-                href="https://wa.me/966571269056"
+                href="https://api.whatsapp.com/send?phone=966571269056"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-white/10 hover:bg-gold transition-colors"

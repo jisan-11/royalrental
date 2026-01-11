@@ -93,7 +93,7 @@ const Services = () => {
               <div className="p-6">
                 <p className="text-muted-foreground mb-4">{service.description}</p>
                 <Button variant="goldOutline" size="sm" className="group/btn" asChild>
-                  <a href="https://wa.me/966571269056" target="_blank" rel="noopener noreferrer">
+                  <a href="https://api.whatsapp.com/send?phone=966571269056" target="_blank" rel="noopener noreferrer">
                     Request Quote
                     <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
                   </a>
@@ -114,7 +114,7 @@ const Services = () => {
             Looking for something specific? We have an extensive collection available.
           </p>
           <Button variant="gold" size="lg" asChild>
-            <a href="https://wa.me/966571269056" target="_blank" rel="noopener noreferrer">
+            <a href="https://api.whatsapp.com/send?phone=966571269056" target="_blank" rel="noopener noreferrer">
               View Full Catalog on WhatsApp
             </a>
           </Button>
