@@ -38,10 +38,10 @@ const Header = () => {
               <Crown className="w-8 h-8 text-gold transition-transform duration-300 group-hover:scale-110" />
             </div>
             <div className="flex flex-col">
-              <span className="font-display text-xl font-bold text-foreground tracking-tight">
+              <span className={`font-display text-xl font-bold tracking-tight ${isScrolled ? 'text-foreground' : 'text-white'}`}>
                 Royal Rental
               </span>
-              <span className="text-xs text-muted-foreground tracking-widest uppercase">
+              <span className={`text-xs tracking-widest uppercase ${isScrolled ? 'text-muted-foreground' : 'text-white/70'}`}>
                 KSA
               </span>
             </div>
@@ -64,7 +64,7 @@ const Header = () => {
           <div className="hidden lg:block">
             <Button variant="gold" size="lg" asChild>
               <a
-                href="https://wa.me/966571269056"
+                href="https://api.whatsapp.com/send?phone=966571269056"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -106,7 +106,7 @@ const Header = () => {
             ))}
             <Button variant="gold" className="w-full" asChild>
               <a
-                href="https://wa.me/966571269056"
+                href="https://api.whatsapp.com/send?phone=966571269056"
                 target="_blank"
                 rel="noopener noreferrer"
               >
