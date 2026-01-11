@@ -53,7 +53,11 @@ const Header = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className="relative font-medium text-foreground/80 hover:text-foreground transition-colors gold-underline py-2"
+                className={`relative font-medium transition-colors gold-underline py-2 ${
+                  isScrolled 
+                    ? 'text-foreground/80 hover:text-foreground' 
+                    : 'text-white/90 hover:text-white'
+                }`}
               >
                 {link.label}
               </a>
@@ -75,7 +79,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 text-foreground"
+            className={`lg:hidden p-2 ${isScrolled ? 'text-foreground' : 'text-white'}`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
