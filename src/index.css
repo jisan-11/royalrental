@@ -150,14 +150,6 @@
   .shadow-gold {
     box-shadow: var(--shadow-gold);
   }
-
-  .shadow-soft {
-    box-shadow: var(--shadow-sm);
-  }
-
-  .shadow-lifted {
-    box-shadow: var(--shadow-lg);
-  }
 }
 
 @layer utilities {
@@ -175,10 +167,6 @@
 
   .animate-slide-in-right {
     animation: slideInRight 0.5s ease-out forwards;
-  }
-
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
   }
 
   @keyframes fadeUp {
@@ -223,15 +211,6 @@
     }
   }
 
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
-  }
-
   .hover-lift {
     @apply transition-all duration-300;
   }
@@ -267,10 +246,5 @@
   .ltr-support {
     direction: ltr;
     text-align: left;
-  }
-
-  /* Background utilities */
-  .bg-cream-dark {
-    background-color: hsl(var(--cream-dark));
   }
 }

@@ -1,23 +1,21 @@
-import { Link } from 'react-router-dom';
-import { Crown, MessageCircle, Instagram, Phone, Heart, MapPin } from 'lucide-react';
+import { Crown, MessageCircle, Instagram, Phone, Heart } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { label: 'Home', labelAr: 'الرئيسية', href: '/' },
-    { label: 'About', labelAr: 'من نحن', href: '/about' },
-    { label: 'Services', labelAr: 'خدماتنا', href: '/services' },
-    { label: 'Gallery', labelAr: 'معرض الصور', href: '/gallery' },
-    { label: 'Contact', labelAr: 'تواصل معنا', href: '/contact' },
+    { label: 'Home', href: '#home' },
+    { label: 'About', href: '#about' },
+    { label: 'Services', href: '#services' },
+    { label: 'Gallery', href: '#gallery' },
+    { label: 'Contact', href: '#contact' },
   ];
 
   const services = [
-    { label: 'Cocktail Tables', labelAr: 'طاولات كوكتيل' },
-    { label: 'Single Chairs', labelAr: 'كراسي فردية' },
-    { label: 'VIP Chairs', labelAr: 'كراسي VIP' },
-    { label: 'Sofa Chairs', labelAr: 'أرائك وكنب' },
-    { label: 'Curtains', labelAr: 'ستائر' },
+    { label: 'Sofa Rentals', labelAr: 'تأجير الأرائك' },
+    { label: 'Chair Rentals', labelAr: 'تأجير الكراسي' },
+    { label: 'Table Rentals', labelAr: 'تأجير الطاولات' },
+    { label: 'Curtain Rentals', labelAr: 'تأجير الستائر' },
   ];
 
   return (
@@ -27,7 +25,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link to="/" className="flex items-center gap-2 mb-6">
+            <a href="#home" className="flex items-center gap-2 mb-6">
               <Crown className="w-8 h-8 text-gold" />
               <div>
                 <span className="font-display text-xl font-bold">Royal Rental</span>
@@ -35,13 +33,13 @@ const Footer = () => {
                   KSA
                 </span>
               </div>
-            </Link>
-            <p className="text-white/70 mb-4 text-sm leading-relaxed">
+            </a>
+            <p className="text-white/70 mb-6 text-sm leading-relaxed">
               Premium furniture rental and sales for events across Saudi Arabia. 
               Transform your weddings, exhibitions, and parties with our elegant collection.
             </p>
             <p className="text-gold rtl-support text-sm">
-              تأجير وبيع الأثاث الفاخر للمناسبات في جميع أنحاء المملكة العربية السعودية
+              تأجير وبيع الأثاث الفاخر للمناسبات في المملكة العربية السعودية
             </p>
           </div>
 
@@ -51,14 +49,12 @@ const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <Link
-                    to={link.href}
-                    className="text-white/70 hover:text-gold transition-colors text-sm flex items-center gap-2"
+                  <a
+                    href={link.href}
+                    className="text-white/70 hover:text-gold transition-colors text-sm"
                   >
-                    <span>{link.label}</span>
-                    <span className="text-gold/60">/</span>
-                    <span className="text-gold/80 rtl-support">{link.labelAr}</span>
-                  </Link>
+                    {link.label}
+                  </a>
                 </li>
               ))}
             </ul>
@@ -66,7 +62,7 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="font-display text-lg font-semibold mb-6">Our Services / خدماتنا</h4>
+            <h4 className="font-display text-lg font-semibold mb-6">Our Services</h4>
             <ul className="space-y-3">
               {services.map((service, index) => (
                 <li key={index} className="text-sm">
@@ -80,16 +76,16 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="font-display text-lg font-semibold mb-6">Contact Us / تواصل معنا</h4>
+            <h4 className="font-display text-lg font-semibold mb-6">Contact Us</h4>
             <div className="space-y-4">
               <a
-                href="https://api.whatsapp.com/send?phone=966550868287"
+                href="https://api.whatsapp.com/send?phone=966571269056"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-white/70 hover:text-gold transition-colors text-sm"
               >
                 <MessageCircle className="w-5 h-5" />
-                +966 055 086 8287
+                +966 571 269 056
               </a>
               <a
                 href="https://www.instagram.com/royal___rentel_ksa"
@@ -100,19 +96,16 @@ const Footer = () => {
                 <Instagram className="w-5 h-5" />
                 @royal___rentel_ksa
               </a>
-              <div className="flex items-start gap-3 text-white/70 text-sm">
-                <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                <div>
-                  <p>Riyadh, Shifa Sanaya District, Baddar</p>
-                  <p className="text-gold/80 rtl-support">الرياض - حي الشفاء الصناعية، بدر</p>
-                </div>
+              <div className="flex items-center gap-3 text-white/70 text-sm">
+                <Phone className="w-5 h-5" />
+                Saudi Arabia 🇸🇦
               </div>
             </div>
 
             {/* Social Links */}
             <div className="flex items-center gap-4 mt-6">
               <a
-                href="https://api.whatsapp.com/send?phone=966550868287"
+                href="https://api.whatsapp.com/send?phone=966571269056"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-white/10 hover:bg-gold transition-colors"
@@ -140,7 +133,7 @@ const Footer = () => {
               © {currentYear} Royal Rental KSA. All rights reserved.
             </p>
             <p className="text-white/60 text-sm flex items-center gap-1">
-              Made with <Heart className="w-4 h-4 text-red-500 fill-red-500" /> in Saudi Arabia 🇸🇦
+              Made with <Heart className="w-4 h-4 text-red-500 fill-red-500" /> in Saudi Arabia
             </p>
           </div>
         </div>

@@ -1,13 +1,10 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Crown } from 'lucide-react';
 import { Button } from './ui/button';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const location = useLocation();
-  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,55 +15,52 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { href: '/', label: 'Home', labelAr: 'الرئيسية' },
-    { href: '/about', label: 'About', labelAr: 'من نحن' },
-    { href: '/services', label: 'Services', labelAr: 'خدماتنا' },
-    { href: '/gallery', label: 'Gallery', labelAr: 'معرض الصور' },
-    { href: '/contact', label: 'Contact', labelAr: 'تواصل معنا' },
+    { href: '#home', label: 'Home', labelAr: 'الرئيسية' },
+    { href: '#about', label: 'About', labelAr: 'من نحن' },
+    { href: '#services', label: 'Services', labelAr: 'خدماتنا' },
+    { href: '#gallery', label: 'Gallery', labelAr: 'معرض الصور' },
+    { href: '#contact', label: 'Contact', labelAr: 'تواصل معنا' },
   ];
-
-  // On non-home pages, always use scrolled (solid) style
-  const useTransparentStyle = isHomePage && !isScrolled;
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        useTransparentStyle
-          ? 'bg-transparent'
-          : 'bg-card/95 backdrop-blur-md shadow-soft'
+        isScrolled
+          ? 'bg-card/95 backdrop-blur-md shadow-soft'
+          : 'bg-transparent'
       }`}
     >
       <div className="container-custom">
         <nav className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
+          <a href="#home" className="flex items-center gap-2 group">
             <div className="relative">
               <Crown className="w-8 h-8 text-gold transition-transform duration-300 group-hover:scale-110" />
             </div>
             <div className="flex flex-col">
-              <span className={`font-display text-xl font-bold tracking-tight ${useTransparentStyle ? 'text-white' : 'text-foreground'}`}>
+              <span className={`font-display text-xl font-bold tracking-tight ${isScrolled ? 'text-foreground' : 'text-white'}`}>
                 Royal Rental
               </span>
-              <span className={`text-xs tracking-widest uppercase ${useTransparentStyle ? 'text-white/70' : 'text-muted-foreground'}`}>
+              <span className={`text-xs tracking-widest uppercase ${isScrolled ? 'text-muted-foreground' : 'text-white/70'}`}>
                 KSA
               </span>
             </div>
-          </Link>
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.href}
-                to={link.href}
+                href={link.href}
                 className={`relative font-medium transition-colors gold-underline py-2 ${
-                  useTransparentStyle 
-                    ? 'text-white/90 hover:text-white' 
-                    : 'text-foreground/80 hover:text-foreground'
-                } ${location.pathname === link.href ? 'text-gold' : ''}`}
+                  isScrolled 
+                    ? 'text-foreground/80 hover:text-foreground' 
+                    : 'text-white/90 hover:text-white'
+                }`}
               >
                 {link.label}
-              </Link>
+              </a>
             ))}
           </div>
 
@@ -74,7 +68,7 @@ const Header = () => {
           <div className="hidden lg:block">
             <Button variant="gold" size="lg" asChild>
               <a
-                href="https://api.whatsapp.com/send?phone=966550868287"
+                href="https://api.whatsapp.com/send?phone=966571269056"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -85,7 +79,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className={`lg:hidden p-2 ${useTransparentStyle ? 'text-white' : 'text-foreground'}`}
+            className={`lg:hidden p-2 ${isScrolled ? 'text-foreground' : 'text-white'}`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -105,22 +99,18 @@ const Header = () => {
         >
           <div className="container-custom py-4 space-y-4">
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.href}
-                to={link.href}
-                className={`block py-2 font-medium transition-colors ${
-                  location.pathname === link.href 
-                    ? 'text-gold' 
-                    : 'text-foreground/80 hover:text-gold'
-                }`}
+                href={link.href}
+                className="block py-2 font-medium text-foreground/80 hover:text-gold transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.label} / {link.labelAr}
-              </Link>
+              </a>
             ))}
             <Button variant="gold" className="w-full" asChild>
               <a
-                href="https://api.whatsapp.com/send?phone=966550868287"
+                href="https://api.whatsapp.com/send?phone=966571269056"
                 target="_blank"
                 rel="noopener noreferrer"
               >
