@@ -1,5 +1,5 @@
 import Layout from '@/components/Layout';
-import { CheckCircle, Award, Users, Clock, MapPin, Building } from 'lucide-react';
+import { CheckCircle, Award, Users, Clock, MapPin, Building, Target, Eye, Gem } from 'lucide-react';
 
 const AboutPage = () => {
   const features = [
@@ -38,6 +38,14 @@ const AboutPage = () => {
     { en: 'VIP Gatherings', ar: 'تجمعات كبار الشخصيات' },
   ];
 
+  const products = [
+    { en: 'Cocktail Tables', ar: 'طاولات كوكتيل' },
+    { en: 'Single Chairs', ar: 'كراسي فردية' },
+    { en: 'VIP Chairs', ar: 'كراسي VIP' },
+    { en: 'Sofa Chairs', ar: 'كراسي أريكة' },
+    { en: 'Curtains & Draping', ar: 'ستائر وديكور' },
+  ];
+
   return (
     <Layout>
       {/* Page Header */}
@@ -49,6 +57,110 @@ const AboutPage = () => {
           <p className="text-white/70 text-lg max-w-2xl mx-auto">
             Your trusted partner for premium event furniture in Saudi Arabia
           </p>
+        </div>
+      </section>
+
+      {/* Company Profile Section */}
+      <section className="section-padding bg-cream-dark relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-gold/5 to-transparent rounded-full blur-3xl" />
+        
+        <div className="container-custom relative">
+          <div className="text-center max-w-4xl mx-auto mb-16">
+            <div className="inline-flex items-center gap-2 mb-4">
+              <div className="h-px w-8 bg-gold" />
+              <span className="text-sm font-medium text-gold uppercase tracking-wider">
+                Company Profile / الملف التعريفي
+              </span>
+              <div className="h-px w-8 bg-gold" />
+            </div>
+
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
+              Welcome to <span className="text-gradient-gold">Royal Rental KSA</span>
+            </h2>
+
+            <p className="text-lg text-muted-foreground mb-4">
+              Royal Rental KSA is a leading provider of premium event furniture rental and sales 
+              services across the Kingdom of Saudi Arabia. With years of experience in the industry, 
+              we have established ourselves as the go-to partner for clients seeking high-quality, 
+              elegant furniture for their special occasions.
+            </p>
+            <p className="text-gold rtl-support text-lg">
+              رويال رينتال السعودية - الشركة الرائدة في تأجير وبيع أثاث المناسبات الفاخر في جميع أنحاء المملكة العربية السعودية
+            </p>
+          </div>
+
+          {/* Vision & Mission Cards */}
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
+            {/* Vision */}
+            <div className="p-8 bg-card rounded-2xl border border-border hover:border-gold/30 transition-colors shadow-soft">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="p-4 rounded-xl bg-gradient-gold text-white">
+                  <Eye className="w-8 h-8" />
+                </div>
+                <div>
+                  <h3 className="font-display text-2xl font-bold text-foreground">Our Vision</h3>
+                  <p className="text-gold rtl-support">رؤيتنا</p>
+                </div>
+              </div>
+              <p className="text-muted-foreground leading-relaxed">
+                To be the premier furniture rental company in Saudi Arabia, recognized for our 
+                exceptional quality, innovative designs, and outstanding customer service. We aim 
+                to transform every event into an unforgettable experience through our premium 
+                furniture solutions.
+              </p>
+              <p className="text-foreground/70 rtl-support mt-4 text-sm">
+                أن نكون الشركة الرائدة في تأجير الأثاث في المملكة العربية السعودية، ومعروفين بجودتنا الاستثنائية وتصاميمنا المبتكرة وخدمة العملاء المتميزة
+              </p>
+            </div>
+
+            {/* Mission */}
+            <div className="p-8 bg-card rounded-2xl border border-border hover:border-gold/30 transition-colors shadow-soft">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="p-4 rounded-xl bg-gradient-gold text-white">
+                  <Target className="w-8 h-8" />
+                </div>
+                <div>
+                  <h3 className="font-display text-2xl font-bold text-foreground">Our Mission</h3>
+                  <p className="text-gold rtl-support">مهمتنا</p>
+                </div>
+              </div>
+              <p className="text-muted-foreground leading-relaxed">
+                To provide our clients with the highest quality event furniture at competitive prices, 
+                delivered with professionalism and care. We are committed to exceeding expectations 
+                through reliable service, timely delivery, and personalized attention to every detail.
+              </p>
+              <p className="text-foreground/70 rtl-support mt-4 text-sm">
+                تزويد عملائنا بأعلى جودة من أثاث المناسبات بأسعار تنافسية، مع تقديم خدمة احترافية وموثوقة
+              </p>
+            </div>
+          </div>
+
+          {/* Key Offerings */}
+          <div className="p-8 bg-card rounded-2xl border border-border mb-16">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="p-4 rounded-xl bg-gradient-gold text-white">
+                <Gem className="w-8 h-8" />
+              </div>
+              <div>
+                <h3 className="font-display text-2xl font-bold text-foreground">Our Key Offerings</h3>
+                <p className="text-gold rtl-support">منتجاتنا الرئيسية</p>
+              </div>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+              {products.map((product, index) => (
+                <div
+                  key={index}
+                  className="flex items-center gap-3 p-4 bg-cream-dark rounded-xl hover:bg-background transition-colors"
+                >
+                  <CheckCircle className="w-5 h-5 text-gold flex-shrink-0" />
+                  <div>
+                    <span className="text-foreground font-medium block">{product.en}</span>
+                    <span className="text-gold text-sm rtl-support">{product.ar}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
